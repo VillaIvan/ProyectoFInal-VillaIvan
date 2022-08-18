@@ -1,0 +1,211 @@
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css);
+@import url(https://use.typekit.net/pah7eoc.css);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Regular; }
+
+body {
+  width: 90%;
+  height: 60%;
+  margin: 3% auto; }
+
+.navbar {
+  background-color: transparent; }
+  .navbar a img {
+    width: 100px; }
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  box-shadow: 7px 13px 37px #000; }
+  main .titles {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+    gap: 3rem; }
+    main .titles .titles_main h1 {
+      font-size: 7rem;
+      font-family: poppins, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      background: linear-gradient(180deg, #50be00 0%, #006e32 100%);
+      -webkit-background-clip: text;
+      color: transparent; }
+    main .titles .titles_main h2 {
+      font-family: poppins, sans-serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 2rem; }
+    main .titles .subtitle {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem; }
+      main .titles .subtitle h3 {
+        font-size: 1.4rem;
+        background: linear-gradient(180deg, #50be00 0%, #006e32 100%);
+        -webkit-background-clip: text;
+        color: transparent; }
+  main .aside {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    main .aside .form-login {
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 7px 7px 20px #000; }
+      main .aside .form-login span {
+        position: relative;
+        font-size: 2rem;
+        font-weight: 600;
+        background: linear-gradient(180deg, #50be00 0%, #006e32 100%);
+        -webkit-background-clip: text;
+        color: transparent; }
+        main .aside .form-login span::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 3px;
+          width: 30px;
+          background-color: #000096;
+          border-radius: 25px; }
+      main .aside .form-login form .input-field {
+        position: relative;
+        height: 50px;
+        width: 100%;
+        margin-top: 30px;
+        transition: all 0.2s ease; }
+        main .aside .form-login form .input-field input {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          border: none;
+          outline: none;
+          border-bottom: 2px solid #ccc;
+          border-top: 2px solid transparent; }
+          main .aside .form-login form .input-field input:is(:focus, :valid) {
+            border-bottom-color: #000096; }
+      main .aside .form-login form .button {
+        margin-top: 35px; }
+        main .aside .form-login form .button input {
+          border: none;
+          letter-spacing: 1px;
+          border-radius: 6px;
+          color: #ffffff;
+          background-color: #000096;
+          cursor: pointer; }
+
+.inactive {
+  display: none; }
+
+.menu {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  height: 50%;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 7px 7px 20px #000; }
+  .menu .titulo {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(180deg, #50be00 0%, #006e32 100%);
+    -webkit-background-clip: text;
+    color: transparent; }
+    .menu .titulo::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 30px;
+      background-color: #000096;
+      border-radius: 25px; }
+  .menu .menuInput {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    transition: all 0.2s ease; }
+    .menu .menuInput ul {
+      padding: 0; }
+      .menu .menuInput ul li {
+        padding: 10px;
+        height: 100%;
+        width: 100%;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #ccc;
+        border-top: 2px solid transparent; }
+  .menu .button {
+    margin-top: 35px; }
+    .menu .button li {
+      margin-top: 1rem;
+      text-decoration: none;
+      text-align: center;
+      border: none;
+      letter-spacing: 1px;
+      border-radius: 6px;
+      color: #ffffff;
+      background-color: #000096;
+      cursor: pointer; }
+
+.caja {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 7px 7px 20px #000; }
+  .caja .initial {
+    padding: 0 5rem; }
+  .caja .titulo {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(180deg, #50be00 0%, #006e32 100%);
+    -webkit-background-clip: text;
+    color: transparent; }
+    .caja .titulo::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 30px;
+      background-color: #000096;
+      border-radius: 25px; }
+  .caja form .input-field {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    margin-top: 30px;
+    transition: all 0.2s ease; }
+    .caja form .input-field input {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      border: none;
+      outline: none;
+      border-bottom: 2px solid #ccc;
+      border-top: 2px solid transparent; }
+      .caja form .input-field input:is(:focus, :valid) {
+        border-bottom-color: #000096; }
+  .caja form .button {
+    margin-top: 35px; }
+    .caja form .button input {
+      text-align: center;
+      border: none;
+      letter-spacing: 1px;
+      border-radius: 6px;
+      color: #ffffff;
+      background-color: #000096;
+      cursor: pointer; }

@@ -1,0 +1,281 @@
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css);
+@import url(https://use.typekit.net/pah7eoc.css);
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Regular;
+}
+
+body {
+  width: 90%;
+  height: 60%;
+  margin: 3% auto;
+}
+.navbar {
+  background-color: transparent;
+
+  a {
+    img {
+      width: 100px;
+    }
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  box-shadow: 7px 13px 37px #000;
+
+  .titles {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+    gap: 3rem;
+    .titles_main {
+      h1 {
+        font-size: 7rem;
+        font-family: poppins, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        background: linear-gradient(
+          180deg,
+          rgba(80, 190, 0, 1) 0%,
+          rgba(0, 110, 50, 1) 100%
+        );
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      h2 {
+        font-family: poppins, sans-serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 2rem;
+      }
+    }
+    .subtitle {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      h3 {
+        font-size: 1.4rem;
+        background: linear-gradient(
+          180deg,
+          rgba(80, 190, 0, 1) 0%,
+          rgba(0, 110, 50, 1) 100%
+        );
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+  .aside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .form-login {
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 7px 7px 20px #000;
+      span {
+        position: relative;
+        font-size: 2rem;
+        font-weight: 600;
+        background: linear-gradient(
+          180deg,
+          rgba(80, 190, 0, 1) 0%,
+          rgba(0, 110, 50, 1) 100%
+        );
+        -webkit-background-clip: text;
+        color: transparent;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 3px;
+          width: 30px;
+          background-color: map-get($font-colors, "back");
+          border-radius: 25px;
+        }
+      }
+      form {
+        .input-field {
+          position: relative;
+          height: 50px;
+          width: 100%;
+          margin-top: 30px;
+          transition: all 0.2s ease;
+          input {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #ccc;
+            border-top: 2px solid transparent;
+            &:is(:focus, :valid) {
+              border-bottom-color: map-get($font-colors, "back");
+            }
+          }
+        }
+        .button {
+          margin-top: 35px;
+          input {
+            border: none;
+            letter-spacing: 1px;
+            border-radius: 6px;
+            color: map-get($font-colors, "fondo");
+            background-color: map-get($font-colors, "back");
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.inactive {
+  display: none;
+}
+.menu {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  height: 50%;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 7px 7px 20px #000;
+  .titulo {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(
+      180deg,
+      rgba(80, 190, 0, 1) 0%,
+      rgba(0, 110, 50, 1) 100%
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 30px;
+      background-color: map-get($font-colors, "back");
+      border-radius: 25px;
+    }
+  }
+  .menuInput {
+    position: relative;
+    height: 50px;
+    width: 100%;
+
+    transition: all 0.2s ease;
+    ul {
+      padding: 0;
+      li {
+        padding: 10px;
+        height: 100%;
+        width: 100%;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #ccc;
+        border-top: 2px solid transparent;
+      }
+    }
+  }
+  .button {
+    margin-top: 35px;
+    li {
+      margin-top: 1rem;
+      text-decoration: none;
+      text-align: center;
+      border: none;
+      letter-spacing: 1px;
+      border-radius: 6px;
+      color: map-get($font-colors, "fondo");
+      background-color: map-get($font-colors, "back");
+      cursor: pointer;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+
+.caja {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 7px 7px 20px #000;
+  .initial {
+    padding: 0 5rem;
+  }
+  .titulo {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(
+      180deg,
+      rgba(80, 190, 0, 1) 0%,
+      rgba(0, 110, 50, 1) 100%
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 30px;
+      background-color: map-get($font-colors, "back");
+      border-radius: 25px;
+    }
+  }
+  form {
+    .input-field {
+      position: relative;
+      height: 40px;
+      width: 100%;
+      margin-top: 30px;
+      transition: all 0.2s ease;
+      input {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #ccc;
+        border-top: 2px solid transparent;
+        &:is(:focus, :valid) {
+          border-bottom-color: map-get($font-colors, "back");
+        }
+      }
+    }
+    .button {
+      margin-top: 35px;
+      input {
+        text-align: center;
+        border: none;
+        letter-spacing: 1px;
+        border-radius: 6px;
+        color: map-get($font-colors, "fondo");
+        background-color: map-get($font-colors, "back");
+        cursor: pointer;
+      }
+    }
+  }
+}

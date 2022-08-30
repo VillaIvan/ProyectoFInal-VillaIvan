@@ -1,3 +1,17 @@
+import { userDB } from "./data/stockExport.js";
+
+let titles = document.querySelector(".titles");
+const showU = document.getElementById("showU");
+let botonUsers = document.getElementById("agregar");
+botonUsers.addEventListener("click", () => {
+  permition();
+});
+
+let botonShow = document.getElementById("showUsers");
+botonShow.addEventListener("click", () => {
+  mostrarUsers();
+});
+
 function permition() {
   function Usuario(user, pass) {
     this.user = user;
@@ -5,23 +19,26 @@ function permition() {
   }
   const nUsuario = document.getElementById("usuarioN").value;
   const nPassword = document.getElementById("passN").value;
-  newUser = new Usuario(nUsuario, nPassword);
-  agregar();
-}
-function agregar() {
+  let newUser = new Usuario(nUsuario, nPassword);
   userDB.push(newUser);
-  console.log(newUser);
-  alert("usted debe relogearse");
 }
+
 function mostrarUsers() {
+  localStorage.clear();
+  const userDBJson = JSON.stringify(userDB);
+  localStorage.setItem("userDB", userDBJson);
+  console.log(localStorage.userDB);
+  titles.classList.add("animate__animated");
+  titles.classList.add("animate__backOutLeft");
+  titles.style.display = "none";
+
   for (let elemento of userDB) {
+    console.log(elemento);
     let contenedor = document.createElement("div");
+    contenedor.className = "contChilds";
     contenedor.innerHTML = `
-         <h2>Usuario: ${elemento.user}</h2>
-         <h2>Contraseña: ${elemento.pass}</h2>`;
-    document.body.appendChild(contenedor);
+   <h3>Usuario: ${elemento.user}</h3>
+  <h3>Contraseña: ${elemento.pass}</h3>`;
+    showU.appendChild(contenedor);
   }
 }
-mostrarUsers();
-permition();
-login();

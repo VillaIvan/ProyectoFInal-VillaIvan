@@ -29,6 +29,7 @@ main {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   box-shadow: 7px 13px 37px #000;
+  height: 75vh;
 
   .titles {
     width: 100%;
@@ -220,7 +221,7 @@ main {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 7px 7px 20px #000;
-  .initial {
+  #initial {
     padding: 0 5rem;
   }
   .titulo {
@@ -277,5 +278,24 @@ main {
         cursor: pointer;
       }
     }
+  }
+}
+////////////////////////////////////////////////////////////////////////////
+
+#showU {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 10px;
+
+  .contChilds {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    margin: auto;
+    border-radius: 6px;
+    color: map-get($font-colors, "fondo");
+    background-color: map-get($font-colors, "back");
   }
 }

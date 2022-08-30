@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
@@ -13,7 +14,7 @@
 
 <body>
 
-    <nav class="navbar ">
+    <nav class="navbar inactive">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="./assets/img/us2.png" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -47,12 +48,12 @@
         </div>
     </nav>
     <main>
-        <div class="titles">
-            <div class="titles_main">
+        <div class="titles ">
+            <div class="titles_main animate__animated animate__backInDown">
                 <h1>Register Box.</h1>
                 <h2>Captacion digital de jugadas de Loteria y Casino</h2>
             </div>
-            <div class="subtitle">
+            <div class="subtitle animate__animated animate__backInLeft">
                 <h3>Diseñado por Ivan Villa.</h3>
                 <p>Una herramienta que ayuda a mejorar <br>
                     el control y el balance economico <br>
@@ -62,7 +63,7 @@
         </div>
         <div class="aside">
 
-            <div class="form-login">
+            <div class="form-login animate__animated animate__headShake">
                 <span class="titulo">Login</span>
                 <form id="formLog">
                     <div class="input-field">
@@ -77,7 +78,7 @@
                 </form>
             </div>
 
-            <div class="menu inactive">
+            <div class="menu inactive animate__animated">
                 <span class="titulo">Menu</span>
                 <div class="menuInput button">
                     <ul>
@@ -88,7 +89,7 @@
                             <a class="nav-link" href="./pages/stock.html">Stock</a>
                         </li>
                         <li class="menu3">
-                            <a class="nav-link" href="./pages/permisos.html">Permisos</a>
+                            <a class="nav-link" href="./pages/usuarios.html">Permisos</a>
                         </li>
                 </div>
 
@@ -102,7 +103,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js" type="module"></script>
 </body>
 
 </html>

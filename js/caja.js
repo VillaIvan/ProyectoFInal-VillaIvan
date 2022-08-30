@@ -1,3 +1,5 @@
+import { stock } from "./data/stockExport.js";
+
 let totalCajaInicio = 0;
 let cantTele, cantRasp15, cantRasp100;
 const tkV = 0;
@@ -23,7 +25,7 @@ function cajaDiaria() {
     stock[0] = stock[0] - cantTele;
     let valorTk = 150;
     let total = 0;
-    for (i = 0; i <= cantTele; i++) {
+    for (let i = 0; i <= cantTele; i++) {
       total = i * valorTk;
     }
     return total;
@@ -34,7 +36,7 @@ function cajaDiaria() {
     stock[1] = stock[1] - cantRasp15;
     let valorR15 = 15;
     let total = 0;
-    for (i = 0; i <= cantRasp15; i++) {
+    for (let i = 0; i <= cantRasp15; i++) {
       total = i * valorR15;
     }
     return total;
@@ -44,7 +46,7 @@ function cajaDiaria() {
     stock[2] = stock[2] - cantRasp100;
     let valorR100 = 100;
     let total = 0;
-    for (i = 0; i <= cantRasp100; i++) {
+    for (let i = 0; i <= cantRasp100; i++) {
       total = i * valorR100;
     }
     return total;
@@ -55,6 +57,7 @@ function cajaDiaria() {
   const rasp15 = calcRasp15();
   const rasp100 = calcRasp100();
   const resultadoVP = difVentasD - difPagosD + telekinos + rasp15 + rasp100;
+  console.log(resultadoVP);
   if (resultadoVP < 0) {
     alert("Usted tiene la caja en negativo, revise los parametros");
     alert("Usted adeuda " + resultadoVP);
@@ -62,6 +65,8 @@ function cajaDiaria() {
     alert("el resultado de la caja es " + resultadoVP);
   }
   totalCajaInicio = totalCajaInicio + resultadoVP;
+  document.getElementById("initial").innerHTML = `
+    Caja Actual: ${totalCajaInicio}`;
 }
 let botonTotal = document.getElementById("totalFinal");
 botonTotal.addEventListener("click", cajaDiaria);

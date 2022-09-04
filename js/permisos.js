@@ -21,24 +21,29 @@ function permition() {
   const nPassword = document.getElementById("passN").value;
   let newUser = new Usuario(nUsuario, nPassword);
   userDB.push(newUser);
+  const userDBJson = JSON.stringify(userDB);
+  localStorage.setItem("userDB", userDB);
+  localStorage.setItem("userDBS", userDBJson);
 }
 
 function mostrarUsers() {
-  localStorage.clear();
-  const userDBJson = JSON.stringify(userDB);
-  localStorage.setItem("userDB", userDBJson);
   console.log(localStorage.userDB);
-  titles.classList.add("animate__animated");
-  titles.classList.add("animate__backOutLeft");
-  titles.style.display = "none";
+  titles.hidden = true;
 
   for (let elemento of userDB) {
     console.log(elemento);
     let contenedor = document.createElement("div");
     contenedor.className = "contChilds";
     contenedor.innerHTML = `
-   <h3>Usuario: ${elemento.user}</h3>
-  <h3>Contraseña: ${elemento.pass}</h3>`;
+
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+  <h3>Usuario: <br> ${elemento.user}</h3>
+  <h3>Contraseña: <br> ${elemento.pass}</h3>
+    <a href="#" class="btn btn-primary">Eliminar</a>
+  </div>
+</div>`;
+
     showU.appendChild(contenedor);
   }
 }

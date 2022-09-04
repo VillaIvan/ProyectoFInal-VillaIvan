@@ -4,8 +4,8 @@ let totalCajaInicio = 0;
 let cantTele, cantRasp15, cantRasp100;
 const tkV = 0;
 
+Swal.fire("INICIO DE CAJA", "La caja inicia con $" + totalCajaInicio, "info");
 function cajaDiaria() {
-  alert("La caja inicia con $" + totalCajaInicio);
   function difVentas(ventaIni, ventaFin) {
     let v1 = document.getElementById("ventasI").value;
     let v2 = document.getElementById("ventasO").value;
@@ -58,15 +58,36 @@ function cajaDiaria() {
   const rasp100 = calcRasp100();
   const resultadoVP = difVentasD - difPagosD + telekinos + rasp15 + rasp100;
   console.log(resultadoVP);
-  if (resultadoVP < 0) {
-    alert("Usted tiene la caja en negativo, revise los parametros");
-    alert("Usted adeuda " + resultadoVP);
-  } else {
-    alert("el resultado de la caja es " + resultadoVP);
-  }
+  Swal.fire({
+    title: "Estas seguro?",
+    text: "La suma de la caja no se puede revertir!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#000096",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Confirmar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      if (resultadoVP < 0) {
+        Swal.fire(
+          "CAJA EN NEGATIVO",
+          "Revise los parametros. Usted adeuda " + resultadoVP,
+          "error"
+        );
+      } else {
+        Swal.fire(
+          "CAJA CORRECTAMENTE INGRESADA",
+          "Su caja contiene $" + resultadoVP,
+          "success"
+        );
+      }
+    }
+  });
   totalCajaInicio = totalCajaInicio + resultadoVP;
-  document.getElementById("initial").innerHTML = `
-    Caja Actual: ${totalCajaInicio}`;
+  let contenedor = document.getElementById("initial");
+  contenedor.className = "titulo2";
+  contenedor.innerHTML = `
+    Caja Actual:$${totalCajaInicio}`;
 }
 let botonTotal = document.getElementById("totalFinal");
 botonTotal.addEventListener("click", cajaDiaria);

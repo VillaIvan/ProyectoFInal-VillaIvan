@@ -1,13 +1,17 @@
 import { stock } from "./data/stockExport.js";
 console.log(stock);
 
-alert(
-  "Su stock actual \n TELEKINOS: " +
+Swal.fire(
+  "STOCK",
+  "TELEKINOS:" +
     stock[0] +
-    "\n RASPADITAS de $15: " +
+    " \n " +
+    "Raspaditas de $15:" +
     stock[1] +
-    "\n RASPADITAS de $100: " +
-    stock[2]
+    "\n" +
+    "Raspaditas de $100:" +
+    stock[2],
+  "info"
 );
 
 function restock() {

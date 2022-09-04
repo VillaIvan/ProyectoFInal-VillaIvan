@@ -292,10 +292,17 @@ main {
     text-align: center;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 0.5rem;
     margin: auto;
-    border-radius: 6px;
-    color: map-get($font-colors, "fondo");
-    background-color: map-get($font-colors, "back");
+    // border-radius: 6px;
+    // color: map-get($font-colors, "fondo");
+    // background-color: map-get($font-colors, "back");
   }
+}
+
+.titulo2 {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 600;
+  color: map-get($font-colors, "back");
 }

@@ -5,13 +5,21 @@ let formLogin = document.querySelector(".form-login");
 let menuMain = document.querySelector(".menu");
 let navBar = document.querySelector(".navbar");
 botonLogin.addEventListener("click", login);
+let tested = document.getElementById("test");
+const valDB = localStorage.getItem("userDB");
+tested.addEventListener("click", () => {
+  console.log(valDB);
+});
+
+menuMain.hidden = true;
+navBar.hidden = true;
+formLogin.hidden = false;
 
 function validate() {
   let storageValidator = sessionStorage.getItem("loginSuccess");
   let storageVJson = JSON.parse(storageValidator);
   if (storageVJson == true) {
-    alert("usted ya estaba logeado. Reingrese sus datos");
-    navBar.classList.remove("inactive");
+    Swal.fire("", "USTED YA HA INGRESADO UNA CUENTA", "warning");
   }
 }
 validate();
@@ -28,13 +36,17 @@ function login(usuario, password) {
   });
   if (validUser === validPass && validUser != -1 && validPass != -1) {
     formLogin.addEventListener("click", () => {
-      formLogin.classList.add("inactive");
-      menuMain.classList.remove("inactive");
-      navBar.classList.remove("inactive");
+      formLogin.hidden = true;
+      menuMain.hidden = false;
+      navBar.hidden = false;
     });
     sessionStorage.setItem("loginSuccess", true);
-    alert("Bienvenido Usuario!");
+    Swal.fire("Bienvenido Usuario!", "", "success");
   } else {
-    alert("Identificacion incorrecta");
+    Swal.fire(
+      "ERROR",
+      "Identificacion incorrecta. Reingrese sus datos",
+      "error"
+    );
   }
 }

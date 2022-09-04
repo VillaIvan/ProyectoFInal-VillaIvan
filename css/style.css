@@ -220,8 +220,11 @@ main {
     text-align: center;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
-    margin: auto;
-    border-radius: 6px;
-    color: #ffffff;
-    background-color: #000096; }
+    padding: 0.5rem;
+    margin: auto; }
+
+.titulo2 {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000096; }

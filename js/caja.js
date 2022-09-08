@@ -91,3 +91,26 @@ function cajaDiaria() {
 }
 let botonTotal = document.getElementById("totalFinal");
 botonTotal.addEventListener("click", cajaDiaria);
+
+const btn = document.getElementById("send");
+
+document.getElementById("formBox").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  btn.value = "Sending...";
+
+  const serviceID = "default_service";
+  const templateID = "template_gqg9g8a";
+
+  emailjs.sendForm(serviceID, templateID, this).then(
+    () => {
+      btn.value = "Send Email";
+      Swal.fire("CAJA CORRECTAMENTE ENVIADA", "", "success");
+    },
+    (err) => {
+      btn.value = "Send Email";
+      Swal.fire("FALLO ENVIO DE CAJA", "", "error");
+      alert(JSON.stringify(err));
+    }
+  );
+});

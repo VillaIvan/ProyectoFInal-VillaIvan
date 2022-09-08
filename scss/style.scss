@@ -306,3 +306,12 @@ main {
   font-weight: 600;
   color: map-get($font-colors, "back");
 }
+
+#send {
+  border: none;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  color: map-get($font-colors, "fondo");
+  background-color: map-get($font-colors, "back");
+  cursor: pointer;
+}

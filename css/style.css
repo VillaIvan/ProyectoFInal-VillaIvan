@@ -228,3 +228,11 @@ main {
   font-size: 1rem;
   font-weight: 600;
   color: #000096; }
+
+#send {
+  border: none;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  color: #ffffff;
+  background-color: #000096;
+  cursor: pointer; }

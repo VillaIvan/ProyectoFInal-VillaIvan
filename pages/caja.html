@@ -69,31 +69,32 @@
                 <span id="initial"></span>
                 <form id="formBox">
                     <div class="input-field">
-                        <input type="number" placeholder="indique con cuanta venta arranco su turno" id="ventasI"
+                        <input type="number" placeholder="indique con cuanta venta arranco su turno" name="ventasI"
+                            id="ventasI" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="number" placeholder="indique con cuanta venta finalizo su turno" name="ventasO"
+                            id="ventasO" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="number" placeholder="indique con cuantos pagos inicio su turno" name="pagosI"
+                            id="pagosI" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="number" placeholder="indique con cuantos pagos finalizo su turno" name="pagosO"
+                            id="pagosO" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="number" placeholder="ingrese cantidad de telekinos vendidos" name="tkO" id="tkO"
                             required>
                     </div>
                     <div class="input-field">
-                        <input type="number" placeholder="indique con cuanta venta finalizo su turno" id="ventasO"
-                            required>
+                        <input type="number" placeholder="ingrese cantidad de raspaditas de $15 vendidas" name="raspa15"
+                            id="raspa15" required>
                     </div>
                     <div class="input-field">
-                        <input type="number" placeholder="indique con cuantos pagos inicio su turno" id="pagosI"
-                            required>
-                    </div>
-                    <div class="input-field">
-                        <input type="number" placeholder="indique con cuantos pagos finalizo su turno" id="pagosO"
-                            required>
-                    </div>
-                    <div class="input-field">
-                        <input type="number" placeholder="ingrese cantidad de telekinos vendidos" id="tkO" required>
-                    </div>
-                    <div class="input-field">
-                        <input type="number" placeholder="ingrese cantidad de raspaditas de $15 vendidas" id="raspa15"
-                            required>
-                    </div>
-                    <div class="input-field">
-                        <input type="number" placeholder="ingrese cantidad de raspaditas de $100 vendidas" id="raspa100"
-                            required>
+                        <input type="number" placeholder="ingrese cantidad de raspaditas de $100 vendidas"
+                            name="raspa100" id="raspa100" required>
                     </div>
                     <div class="input-field button">
                         <input type="text" id="totalFinal" value="Total">

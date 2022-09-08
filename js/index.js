@@ -5,11 +5,14 @@ let formLogin = document.querySelector(".form-login");
 let menuMain = document.querySelector(".menu");
 let navBar = document.querySelector(".navbar");
 botonLogin.addEventListener("click", login);
+
+///////////////TEST////////////////
 let tested = document.getElementById("test");
 const valDB = localStorage.getItem("userDB");
 tested.addEventListener("click", () => {
   console.log(valDB);
 });
+////////////////////////////////////
 
 menuMain.hidden = true;
 navBar.hidden = true;
@@ -20,6 +23,7 @@ function validate() {
   let storageVJson = JSON.parse(storageValidator);
   if (storageVJson == true) {
     Swal.fire("", "USTED YA HA INGRESADO UNA CUENTA", "warning");
+    navBar.hidden = false;
   }
 }
 validate();

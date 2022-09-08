@@ -3,8 +3,9 @@ import { stock } from "./data/stockExport.js";
 let totalCajaInicio = 0;
 let cantTele, cantRasp15, cantRasp100;
 const tkV = 0;
+const initialBox = localStorage.getItem("totalCajaInicio", totalCajaInicio);
 
-Swal.fire("INICIO DE CAJA", "La caja inicia con $" + totalCajaInicio, "info");
+Swal.fire("INICIO DE CAJA", "La caja inicia con $" + initialBox, "info");
 function cajaDiaria() {
   function difVentas(ventaIni, ventaFin) {
     let v1 = document.getElementById("ventasI").value;
@@ -84,6 +85,7 @@ function cajaDiaria() {
     }
   });
   totalCajaInicio = totalCajaInicio + resultadoVP;
+  localStorage.setItem("totalCajaInicio", totalCajaInicio);
   let contenedor = document.getElementById("initial");
   contenedor.className = "titulo2";
   contenedor.innerHTML = `
@@ -92,12 +94,14 @@ function cajaDiaria() {
 let botonTotal = document.getElementById("totalFinal");
 botonTotal.addEventListener("click", cajaDiaria);
 
+///////////////// EMAILJS ////////////////////
+
 const btn = document.getElementById("send");
 
 document.getElementById("formBox").addEventListener("submit", function (event) {
   event.preventDefault();
 
-  btn.value = "Sending...";
+  btn.value = "Enviando...";
 
   const serviceID = "default_service";
   const templateID = "template_gqg9g8a";

@@ -21,7 +21,8 @@ main {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   box-shadow: 7px 13px 37px #000;
-  height: 80vh; }
+  height: 80vh;
+  overflow: hidden; }
   main .titles {
     width: 100%;
     height: 100%;
@@ -215,7 +216,8 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 10px; }
+  grid-column-gap: 10px;
+  overflow: scroll; }
   #showU .contChilds {
     text-align: center;
     display: flex;

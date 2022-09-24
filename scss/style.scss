@@ -30,6 +30,7 @@ main {
   grid-template-rows: auto;
   box-shadow: 7px 13px 37px #000;
   height: 80vh;
+  overflow: hidden;
 
   .titles {
     width: 100%;
@@ -287,6 +288,7 @@ main {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 10px;
+  overflow: scroll;
 
   .contChilds {
     text-align: center;
@@ -294,9 +296,6 @@ main {
     flex-direction: column;
     padding: 0.5rem;
     margin: auto;
-    // border-radius: 6px;
-    // color: map-get($font-colors, "fondo");
-    // background-color: map-get($font-colors, "back");
   }
 }
 

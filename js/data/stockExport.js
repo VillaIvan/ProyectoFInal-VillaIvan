@@ -1,7 +1,10 @@
-export const stock = [20, 20, 20];
+export const stock = [
+  { producto: "telekino", cantidad: "20" },
+  { producto: "raspax15", cantidad: "20" },
+  { producto: "raspax100", cantidad: "20" },
+];
 
 export const userDB = [
   { user: "admin", pass: "1234" },
-  { user: "ivan", pass: "villa" },
-  { user: "coder", pass: "house" },
+  { user: "ola", pass: "kease" },
 ];

@@ -1,9 +1,13 @@
 import { stock } from "./data/stockExport.js";
 
+let check = JSON.parse(localStorage.getItem("stockDB"));
+console.log(check);
 let totalCajaInicio = 0;
+localStorage.setItem("totalCajaInicio", totalCajaInicio);
 let cantTele, cantRasp15, cantRasp100;
 const tkV = 0;
-const initialBox = localStorage.getItem("totalCajaInicio", totalCajaInicio);
+
+let initialBox = localStorage.getItem("totalCajaInicio");
 
 Swal.fire("INICIO DE CAJA", "La caja inicia con $" + initialBox, "info");
 function cajaDiaria() {
@@ -23,7 +27,7 @@ function cajaDiaria() {
 
   function calcTk(cantTk) {
     cantTele = document.getElementById("tkO").value;
-    stock[0] = stock[0] - cantTele;
+    check[0].cantidad = check[0].cantidad - cantTele;
     let valorTk = 150;
     let total = 0;
     for (let i = 0; i <= cantTele; i++) {
@@ -34,7 +38,7 @@ function cajaDiaria() {
 
   function calcRasp15(cantR15) {
     cantRasp15 = document.getElementById("raspa15").value;
-    stock[1] = stock[1] - cantRasp15;
+    check[1].cantidad = check[1].cantidad - cantRasp15;
     let valorR15 = 15;
     let total = 0;
     for (let i = 0; i <= cantRasp15; i++) {
@@ -44,7 +48,7 @@ function cajaDiaria() {
   }
   function calcRasp100(cantR100) {
     cantRasp100 = document.getElementById("raspa100").value;
-    stock[2] = stock[2] - cantRasp100;
+    check[2].cantidad = check[2].cantidad - cantRasp100;
     let valorR100 = 100;
     let total = 0;
     for (let i = 0; i <= cantRasp100; i++) {
@@ -52,13 +56,25 @@ function cajaDiaria() {
     }
     return total;
   }
-  var difVentasD = difVentas().toFixed(2);
+
+  let stockUpdate = () => {
+    for (let elemento of check) {
+      elemento.cantidad == 0
+        ? console.log("no tenes mas " + elemento.producto + "actualiza stock")
+        : console.log("tenes stock aun de " + elemento.producto);
+    }
+    localStorage.setItem("stockDB", JSON.stringify(check));
+  };
+
+  const difVentasD = difVentas().toFixed(2);
   const difPagosD = difPagos().toFixed(2);
   const telekinos = calcTk();
   const rasp15 = calcRasp15();
   const rasp100 = calcRasp100();
+  stockUpdate();
   const resultadoVP = difVentasD - difPagosD + telekinos + rasp15 + rasp100;
   console.log(resultadoVP);
+  console.log(check);
   Swal.fire({
     title: "Estas seguro?",
     text: "La suma de la caja no se puede revertir!",
@@ -84,6 +100,7 @@ function cajaDiaria() {
       }
     }
   });
+
   totalCajaInicio = totalCajaInicio + resultadoVP;
   localStorage.setItem("totalCajaInicio", totalCajaInicio);
   let contenedor = document.getElementById("initial");
